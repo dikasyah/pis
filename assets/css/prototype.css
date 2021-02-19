@@ -1,0 +1,469 @@
+/*Prototype Menu*/
+.prototype-menu-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.prototype-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  animation-name: drop;
+  animation-duration: 0.5s;
+}
+.prototype-menu img {
+  width: 70%;
+  height: 55%;
+}
+
+.prototype-menu p {
+  font-size: 16px;
+  color: white;
+  margin-top: 10px;
+  font-weight: 500;
+}
+.prototype-menu:hover,
+.prototype-submenu-clickable:hover {
+  webkit-box-shadow: inset 0 0 0 200px rgba(36, 36, 36, 0.7);
+  box-shadow: inset 0 0 0 200px rgba(36, 36, 36, 0.7);
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+}
+/*Prototype Menu end*/
+
+/*modal*/
+.prototype-submenu-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+.prototype-submenu {
+  height: 110px;
+  width: 120px;
+}
+
+.prototype-submenu-clickable {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -3px 3px black, -2px 2px black, -1px 1px black;
+  border: 1px solid black;
+  animation-name: drop;
+  animation-duration: 1s;
+}
+
+#submenuButton {
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #065a00;
+  color: #fff;
+  float: right;
+  box-shadow: -2px 2px black, -1px 1px black;
+  border: 1px solid black;
+  margin-bottom: 3px;
+  margin-top: 1px;
+}
+#submenuButton:hover {
+  webkit-box-shadow: inset 0 0 0 200px rgba(36, 36, 36, 0.7);
+  box-shadow: inset 0 0 0 200px rgba(36, 36, 36, 0.7);
+  cursor: pointer;
+  -webkit-transition: all 1s ease;
+}
+
+@keyframes drop {
+  from {
+    transform: translatey(-50px);
+    opacity: 0.05;
+  }
+  to {
+    transform: translatey(0px);
+    opacity: 1;
+  }
+}
+
+.prototype-submenu-clickable img {
+  width: 50%;
+  height: 50%;
+}
+
+.prototype-submenu-clickable p {
+  font-size: 13px;
+  margin-top: 5px;
+  color: #fff;
+  font-weight: bold;
+}
+.pop {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width: 500px;
+  height: 200px;
+  max-width: 80%;
+}
+
+.menuPop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  z-index: 10;
+  background-color: white;
+  width: 500px;
+  height: 500px;
+  max-width: 80%;
+}
+
+.pop.active,
+.menuPop.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.pop .modal-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  background-color: black;
+  border-radius: 8px;
+  box-shadow: 1px 0px black;
+}
+.menuPop .modal-header {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.pop .modal-header .title {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.pop .modal-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.pop .modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+  height: 70%;
+}
+
+.pop .modal-body p {
+  font-size: 30px;
+  color: black;
+  font-weight: 500;
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.menu-pop-body-container {
+  border: 1px solid black;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+  background-color: #efefef;
+}
+
+.pmh-one,
+.pmh-two,
+.pmh-three {
+  border: 1px solid black;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #009700;
+}
+.pmh-four {
+  border: 1px solid black;
+  padding-left: 5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #009700;
+}
+
+.pmh-one p,
+.pmh-two p,
+.pmh-three p {
+  margin: 0;
+  color: #fff;
+  font-weight: bold;
+}
+
+#submenuText {
+  font-size: 12px;
+  color: #fff;
+  font-weight: bold;
+}
+/*modal end*/
+
+/*responsive screen size*/
+@media (min-width: 1200px) {
+  .prototype-menu-container {
+    margin-bottom: 2%;
+  }
+
+  .prototype-menu {
+    width: 200px;
+    height: 200px;
+    margin-right: 2%;
+  }
+}
+@media (min-width: 1000px) and (max-width: 1200px) {
+  .prototype-menu-container {
+    margin-bottom: 2%;
+  }
+
+  .prototype-menu {
+    width: 170px;
+    height: 170px;
+    margin-right: 2%;
+  }
+  .prototype-menu img {
+    width: 60%;
+    height: 50%;
+  }
+
+  .prototype-menu p {
+    font-size: 14px;
+  }
+}
+@media (min-width: 600px) and (max-width: 1000px) {
+  .prototype-menu-container {
+    margin-bottom: 3%;
+  }
+
+  .prototype-menu {
+    width: 200px;
+    height: 200px;
+    margin-right: 3%;
+  }
+}
+@media (min-width: 320px) and (max-width: 600px) {
+  .prototype-menu-container {
+    margin-bottom: 2%;
+  }
+
+  .prototype-menu {
+    width: 150px;
+    height: 150px;
+    margin-right: 2%;
+  }
+  .prototype-menu img {
+    width: 45%;
+    height: 45%;
+  }
+
+  .prototype-menu p {
+    font-size: 12px;
+  }
+}
+@media (min-width: 270px) and (max-width: 320px) {
+  .prototype-menu-container {
+    margin-bottom: 2%;
+  }
+
+  .prototype-menu {
+    width: 130px;
+    height: 130px;
+    margin-right: 2%;
+  }
+  .prototype-submenu {
+    height: 90px;
+    width: 60px;
+  }
+  .prototype-submenu-clickable img {
+    width: 45%;
+    height: 45%;
+  }
+  .prototype-submenu-clickable p {
+    font-size: 8px;
+  }
+  .prototype-menu img {
+    width: 40%;
+    height: 40%;
+  }
+
+  .prototype-menu p {
+    font-size: 10px;
+  }
+}
+@media (min-width: 180px) and (max-width: 269px) {
+  .prototype-menu-container {
+    margin-bottom: 2%;
+  }
+
+  .prototype-menu {
+    width: 100px;
+    height: 100px;
+    margin-right: 2%;
+  }
+  .pop .modal-body p {
+    font-size: 25px;
+  }
+  .pop .modal-header .title {
+    font-size: 14px;
+  }
+  .prototype-submenu {
+    height: 90px;
+    width: 60px;
+  }
+  .prototype-submenu-clickable img {
+    width: 45%;
+    height: 45%;
+  }
+  .prototype-submenu-clickable p {
+    font-size: 8px;
+  }
+  .prototype-menu img {
+    width: 40%;
+    height: 40%;
+  }
+
+  .prototype-menu p {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 179px) {
+  .prototype-menu-container {
+    margin-bottom: 1%;
+  }
+
+  .prototype-menu {
+    width: 70px;
+    height: 70px;
+    margin-right: 1%;
+  }
+  .pop .modal-body p {
+    font-size: 20px;
+  }
+  .pop .modal-header .title {
+    font-size: 12px;
+  }
+  .prototype-submenu {
+    height: 90px;
+    width: 60px;
+  }
+  .prototype-submenu-clickable img {
+    width: 45%;
+    height: 30%;
+  }
+  .prototype-submenu-clickable p {
+    font-size: 4px;
+  }
+  .prototype-menu img {
+    width: 35%;
+    height: 35%;
+  }
+
+  .prototype-menu p {
+    font-size: 8px;
+  }
+}
+/*for menu pop */
+@media (min-width: 768px) {
+  .pmh-one {
+    margin-left: 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  .pmh-three {
+    border: 1px solid black;
+    margin-left: 15px;
+    margin-right: 10px;
+  }
+  .menu-pop-body-container {
+    height: 76%;
+  }
+}
+@media (max-width: 768px) {
+  .pmh-one,
+  .pmh-three {
+    margin-left: 15px;
+    margin-right: 10px;
+    margin-bottom: 2px;
+  }
+  .pmh-two {
+    margin-left: 15px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+  }
+  .pmh-four {
+    margin-left: 15px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+  }
+  .menu-pop-body-container {
+    height: 64%;
+  }
+}
+
+@media (min-width: 450px) and (max-width: 768px) {
+  .prototype-submenu {
+    height: 100px;
+    width: 110px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 450px) {
+  .prototype-submenu {
+    height: 70px;
+    width: 65px;
+  }
+  .prototype-submenu-clickable img {
+    width: 30%;
+    height: 30%;
+  }
+  .prototype-submenu-clickable .stat{
+    font-size: 9px;
+    text-align: center;
+   
+  }
+  .prototype-submenu-clickable .stat2{
+    font-size: 7.5px;
+  }
+}
+/*for menu pop end*/
+/*responsive screen size end*/
